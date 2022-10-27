@@ -1,0 +1,32 @@
+<div id="friend">
+    <div>
+        <h2>View friends</h2>
+        <p>List all your friends</p>
+        <button (click)=viewFriends()> View friends &raquo;</button>
+    </div>
+    <div>     
+      <h2>Add friend</h2>
+      <p>Give the name and add to your list.</p>
+      <button> Add friend &raquo;</button>
+      <input type="text" placeholder="new friend's name" id="newName">
+    </div>
+    <div>
+      <h2>Remove friend</h2>
+      <p>Want to break with friend? Remove him/her from your list.</p>
+      <button> Delete friend &raquo;</button>
+      <input type="text" placeholder="old friend's name" id="oldName">
+    </div>
+    <br>
+    <div class="my-grid-item" *ngFor=" let friend of friends">
+        <div class="my-grid-inner-item my-grid-item-title"></div>
+        <div class="my-grid-inner-item my-grid-item-content">
+            <p>
+                <img [src]="'https://i.pravatar.cc/150?u=' + myEncode(friend.name)">
+            </p>
+            <p>{{friend.name}}</p>
+
+        </div>
+
+
+    </div>
+</div>
